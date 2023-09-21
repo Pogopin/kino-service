@@ -1,25 +1,17 @@
 <template>
-<section class="slogan">
-  <div class="container">
-			<div class="slogan__content">
-				<h2 class="slogan__title">We are breaking</h2>
-        <h2 class="slogan__subtitle">All Limitations</h2>
-				<p class="slogan__text">Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod tempor incididunt labore
-           etolore magna aliqua enim minim veniam quis nostrud exercitation ullamco laboris.
-        </p>
-        <div class="slogan__img"></div>
-
+  <section class="slogan">
+	  <div class="slogan__content">
+			<h2 class="slogan__title">We are breaking</h2>
+      <h2 class="slogan__subtitle">All Limitations</h2>
+			<p class="slogan__text">Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod tempor incididunt labore
+        etolore magna aliqua enim minim veniam quis nostrud exercitation ullamco laboris.
+      </p>
+      <div class="slogan__img"></div>
 		</div>
-	</div>
-
+    <Slick/>
 </section>
-
 </template>
 <style scoped>
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 .slogan__content {
   width: 100%;
   height: 322px;
@@ -52,3 +44,6 @@
 
 }
 </style>
+<script setup>
+import { Slick } from '@/components/widgets/'
+</script>

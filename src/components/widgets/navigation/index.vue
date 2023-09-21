@@ -3,19 +3,15 @@
         <div class="container">
           <div class="navigation__content">
             <ul class="navigation__list">
-
-                <li v-for="(el) in menu_items" :key="el.title"
-                  class="navigation__list-item"
-                  @click="setActive(el)"
-                  :class="[{ 'active': el === activeItem }]"
+                <li v-for="(_, tab) in tabs" :key="tab"
+                  @click="currentTab = tab"
+                  :class="['navigation__list-item', { 'active': currentTab === tab }]"
                 >
-                  <router-link :to="el.page"> {{el.title}} </router-link>
-
+                  {{ tab }}
                 </li>
-
-					  </ul>
+			</ul>
+            <component :is="tabs[currentTab]"></component>
           </div>
-
         </div>
     </section>
 </template>
@@ -26,7 +22,7 @@
 }
 .navigation__list {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .navigation__list-item {
   padding: 5px 106px;
@@ -51,18 +47,12 @@
 </style>
 <script setup>
 import { ref } from 'vue';
+import { Home, Top20 } from '@/components/widgets/';
 
-const menu_items = ref([
-    { title: 'Home', page: '/'},
-    { title: 'Топ 20', page: '/top_20' },
-    { title: 'Топ 100', page: '/top_100' },
-    { title: 'Новинки', page: '/newFilms'}
-])
-const activeItem = ref(menu_items.value[0]);
-function setActive(item) {
-  activeItem.value = item;
+const currentTab = ref('Home');
+const tabs = {
+  Home, Top20
 }
-
 
 </script>
 

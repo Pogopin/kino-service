@@ -1,8 +1,6 @@
 <template>
-  <Navigation
-  />
-  <!-- <Slogan -->
-  <router-view/>
+  <Navigation/>
+
 </template>
 <style scoped></style>
 <script setup>
